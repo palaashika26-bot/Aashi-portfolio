@@ -1,0 +1,39 @@
+/*
+ * Design tokens for the portfolio.
+ * All colors are expressed as HSL triplets so Tailwind's `hsl(var(--x))` pattern works.
+ */
+
+:root {
+  --background: 240 6% 4%;             /* #09090B  near-black */
+  --foreground: 0 0% 100%;
+
+  --card: 240 6% 7%;                    /* very dark gray */
+  --card-foreground: 0 0% 100%;
+
+  --muted: 240 5% 12%;
+  --muted-foreground: 240 5% 65%;
+
+  --popover: 240 6% 7%;
+  --popover-foreground: 0 0% 100%;
+
+  --border: 240 5% 15%;
+  --input: 240 5% 15%;
+  --ring: 217 91% 60%;
+
+  --primary: 217 91% 60%;               /* Electric Blue */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 258 90% 66%;             /* Purple */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 217 91% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --electric: 217 91% 60%;
+  --violet: 258 90% 66%;
+
+  --radius: 0.875rem;
+}
