@@ -26,7 +26,7 @@ export default function Certifications() {
               href={c.credentialUrl ?? "#"}
               target="_blank"
               rel="noreferrer"
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.06, ease: EASE.out }}
@@ -58,6 +58,11 @@ export default function Certifications() {
               <h3 className="relative mt-4 font-display text-[16px] font-semibold leading-snug tracking-tight text-white">
                 {c.name}
               </h3>
+
+              <div className="relative mt-4 flex items-center gap-1.5 text-[12px] font-medium text-white/50 transition-colors group-hover:text-white/80">
+                <span>View Certificate</span>
+                <ArrowUpRight className="h-3 w-3" />
+              </div>
             </motion.a>
           ))}
         </div>

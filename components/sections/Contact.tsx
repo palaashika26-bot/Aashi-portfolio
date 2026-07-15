@@ -49,7 +49,7 @@ export default function Contact() {
         <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-5">
           {/* Info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: EASE.out }}
@@ -81,10 +81,10 @@ export default function Contact() {
             />
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.2, duration: 0.7, ease: EASE.out }}
               className="rounded-2xl border border-white/8 bg-white/[0.02] p-5"
             >
               <div className="flex items-center gap-2">
@@ -104,7 +104,8 @@ export default function Contact() {
 
           {/* Form */}
           <motion.form
-            initial={{ opacity: 0, y: 20 }}
+            suppressHydrationWarning
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: EASE.out }}
@@ -114,6 +115,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field label="Your name">
                 <input
+                  suppressHydrationWarning
                   type="text"
                   required
                   value={form.name}
@@ -124,6 +126,7 @@ export default function Contact() {
               </Field>
               <Field label="Your email">
                 <input
+                  suppressHydrationWarning
                   type="email"
                   required
                   value={form.email}
@@ -136,6 +139,7 @@ export default function Contact() {
 
             <Field label="Tell me about your project" className="mt-4">
               <textarea
+                suppressHydrationWarning
                 required
                 rows={5}
                 value={form.message}
@@ -153,6 +157,7 @@ export default function Contact() {
                 </a>
               </p>
               <button
+                suppressHydrationWarning
                 type="submit"
                 disabled={status !== "idle"}
                 className={cn(

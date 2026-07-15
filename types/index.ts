@@ -32,12 +32,14 @@ export interface Project {
   };
 }
 
+export type SkillLevel = "comfortable" | "familiar" | "learning";
+
 export interface SkillCategory {
   id: string;
   title: string;
   icon: LucideIcon;
   accent: ProjectAccent;
-  skills: { name: string; level: number }[];
+  skills: { name: string; level: SkillLevel }[];
 }
 
 export interface ExperienceItem {

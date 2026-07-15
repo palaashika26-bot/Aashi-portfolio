@@ -22,7 +22,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.figure
               key={t.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: EASE.out }}

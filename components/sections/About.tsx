@@ -18,7 +18,7 @@ export default function About() {
           {/* Left: Portrait card + meta */}
           <div className="md:col-span-5">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.9, ease: EASE.out }}
@@ -44,7 +44,7 @@ export default function About() {
             </motion.div>
 
             <motion.dl
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.15, ease: EASE.out }}
@@ -66,7 +66,13 @@ export default function About() {
             />
 
             {/* Who I Am */}
-            <div className="mt-6 space-y-5 text-[15px] leading-[1.8] text-white/70">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.05, ease: EASE.out }}
+              className="mt-6 space-y-5 text-[15px] leading-[1.8] text-white/70"
+            >
               <p>
                 I&apos;m Aashika Pal — a second year B.Sc Computer Science student at Mithibai College, Mumbai.
                 I build full-stack web applications, work with modern JavaScript frameworks, and enjoy understanding
@@ -88,7 +94,7 @@ export default function About() {
                 design, and deployment. I want to become a software engineer who builds reliable, scalable, and
                 meaningful software.
               </p>
-            </div>
+            </motion.div>
 
             {/* Stats */}
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -99,7 +105,7 @@ export default function About() {
 
             {/* Interests */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1, ease: EASE.out }}

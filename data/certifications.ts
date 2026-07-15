@@ -6,6 +6,7 @@ export const certifications: Certification[] = [
     name: "Claude Code in Action",
     issuer: "Anthropic",
     year: "2025",
+    credentialUrl: "/certificates/anthropic_certificate.pdf",
     accent: "blue",
   },
   {
@@ -13,6 +14,7 @@ export const certifications: Certification[] = [
     name: "Technology Job Simulation",
     issuer: "Deloitte",
     year: "2025",
+    credentialUrl: "/certificates/deloitte_certificate.pdf",
     accent: "emerald",
   },
   {
@@ -20,6 +22,7 @@ export const certifications: Certification[] = [
     name: "GenAI Powered Data Analytics Job Simulation",
     issuer: "Tata",
     year: "2025",
+    credentialUrl: "/certificates/TATA_CERTIFICATE (1).pdf",
     accent: "violet",
   },
 ];

@@ -1,5 +1,4 @@
 import Background from "@/components/layout/Background";
-import LoadingScreen from "@/components/layout/LoadingScreen";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -14,7 +13,6 @@ import Contact from "@/components/sections/Contact";
 export default function HomePage() {
   return (
     <>
-      <LoadingScreen />
       <Background />
       <Navbar />
       <main className="relative">

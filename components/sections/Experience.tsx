@@ -10,7 +10,19 @@ import { EASE } from "@/lib/constants";
 
 export default function Experience() {
   return (
-    <Section id="experience">
+    <Section
+      id="experience"
+      className="relative overflow-hidden"
+    >
+      {/* Background image with dark overlay */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url(/images/projects/photo-ground-texture-pattern.jpg)" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#09090B]/95 via-black/80 to-[#09090B]/95" />
+      </div>
+
       <Container size="lg">
         <SectionHeading
           eyebrow="Path so far"
@@ -19,7 +31,7 @@ export default function Experience() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: EASE.out }}
