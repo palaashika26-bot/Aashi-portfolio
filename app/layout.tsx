@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/data/site";
+import { withBasePath } from "@/lib/utils";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,24 +40,24 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.role}`,
     description: site.description,
-    images: [
-      {
-        url: "/og.svg",
-        width: 1200,
-        height: 630,
-        alt: `${site.name} — ${site.role}`,
-      },
-    ],
+      images: [
+        {
+          url: withBasePath("/og.svg"),
+          width: 1200,
+          height: 630,
+          alt: `${site.name} — ${site.role}`,
+        },
+      ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description: site.description,
     creator: site.socials.twitterHandle,
-    images: ["/og.svg"],
+    images: [withBasePath("/og.svg")],
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [{ url: withBasePath("/favicon.svg"), type: "image/svg+xml" }],
   },
   robots: {
     index: true,

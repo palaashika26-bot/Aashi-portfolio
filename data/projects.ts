@@ -1,4 +1,5 @@
 import type { Project } from "@/types";
+import { withBasePath } from "@/lib/utils";
 
 export const projects: Project[] = [
   {
@@ -26,9 +27,9 @@ export const projects: Project[] = [
     accent: "blue",
     role: "Freelance Developer",
     duration: "1 month",
-    cover: "/images/projects/elios-wholesale.jpg",
+    cover: withBasePath("/images/projects/elios-wholesale.jpg"),
     gallery: [
-      "/images/projects/elios-wholesale.jpg",
+      withBasePath("/images/projects/elios-wholesale.jpg"),
     ],
     featured: true,
     status: "Client Project",
@@ -62,9 +63,9 @@ export const projects: Project[] = [
     accent: "cyan",
     role: "Full-Stack Developer",
     duration: "2 weeks",
-    cover: "/images/projects/quizbattle-ai.png",
+    cover: withBasePath("/images/projects/quizbattle-ai.png"),
     gallery: [
-      "/images/projects/quizbattle-ai.png",
+      withBasePath("/images/projects/quizbattle-ai.png"),
     ],
     featured: false,
     status: "AI Web App",
@@ -96,9 +97,9 @@ export const projects: Project[] = [
     accent: "emerald",
     role: "Frontend Developer",
     duration: "3 days",
-    cover: "/images/projects/tic-tac-toe.png",
+    cover: withBasePath("/images/projects/tic-tac-toe.png"),
     gallery: [
-      "/images/projects/tic-tac-toe.png",
+      withBasePath("/images/projects/tic-tac-toe.png"),
     ],
     featured: false,
     status: "Game",
@@ -130,9 +131,9 @@ export const projects: Project[] = [
     accent: "rose",
     role: "Frontend Developer",
     duration: "5 days",
-    cover: "/images/projects/rock-paper-scissors.png",
+    cover: withBasePath("/images/projects/rock-paper-scissors.png"),
     gallery: [
-      "/images/projects/rock-paper-scissors.png",
+      withBasePath("/images/projects/rock-paper-scissors.png"),
     ],
     featured: false,
     status: "Game",

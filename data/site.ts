@@ -1,5 +1,6 @@
 import type { Social } from "@/types";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { withBasePath } from "@/lib/utils";
 
 export const site = {
   name: "Aashika Pal",
@@ -20,7 +21,7 @@ export const site = {
     "Aashika Pal",
   ],
   availability: "Open to opportunities",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: withBasePath("/resume.pdf"),
   socials: {
     github: "https://github.com/palaashika26-bot",
     linkedin: "https://linkedin.com/in/aashikapal/",

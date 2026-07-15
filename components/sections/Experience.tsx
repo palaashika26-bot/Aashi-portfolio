@@ -7,6 +7,7 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { EASE } from "@/lib/constants";
+import { withBasePath } from "@/lib/utils";
 
 export default function Experience() {
   return (
@@ -18,7 +19,7 @@ export default function Experience() {
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url(/images/projects/photo-ground-texture-pattern.jpg)" }}
+          style={{ backgroundImage: `url(${withBasePath("/images/projects/photo-ground-texture-pattern.jpg")})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#09090B]/95 via-black/80 to-[#09090B]/95" />
       </div>
