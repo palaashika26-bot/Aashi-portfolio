@@ -9,6 +9,7 @@ import StatCard from "@/components/ui/StatCard";
 import { site } from "@/data/site";
 import { heroStats, interests } from "@/data/stats";
 import { EASE } from "@/lib/constants";
+import { withBasePath } from "@/lib/utils";
 import { GraduationCap, MapPin, Coffee, Code } from "lucide-react";
 
 export default function About() {
@@ -43,7 +44,7 @@ export default function About() {
                   }}
                 />
                 <Image
-                  src="/images/projects/profile.png"
+                  src={withBasePath("/images/projects/profile.png")}
                   alt="Aashika Pal"
                   fill
                   className="object-cover object-center"
