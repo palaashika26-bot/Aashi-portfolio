@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import MagneticButton from "@/components/ui/MagneticButton";
+import CodeEditor from "@/components/ui/CodeEditor";
+import DeveloperNetwork from "@/components/ui/DeveloperNetwork";
 import { site, socialLinks } from "@/data/site";
 import { EASE } from "@/lib/constants";
 
@@ -22,7 +24,6 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-[85svh] items-center justify-center overflow-hidden pt-28"
     >
-      {/* Parallax orbs */}
       <motion.div
         style={{ y: yBg, opacity: opacityBg }}
         aria-hidden
@@ -34,9 +35,7 @@ export default function Hero() {
 
       <div className="container relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Text content */}
           <div className="text-center lg:text-left">
-            {/* Availability chip */}
             <motion.div
               initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -50,32 +49,34 @@ export default function Hero() {
               {site.availability}
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 1.05, delay: 0.25, ease: EASE.out }}
+              transition={{ duration: 0.9, delay: 0.15, ease: EASE.out }}
               className="mt-6 font-display text-display-xl font-semibold tracking-tight text-gradient"
+              style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 4.25rem)" }}
             >
               Building scalable web applications{" "}
               <span className="text-gradient-brand">with modern technologies.</span>
             </motion.h1>
 
-            {/* Subtitle */}
+            <div className="mt-6">
+              <CodeEditor />
+            </div>
+
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: EASE.out }}
               className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-white/60 md:text-[17.5px]"
             >
               Every project begins with curiosity and grows through problem-solving. Scroll through my journey—from writing my first lines of code to building production-ready applications for real clients.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.75 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: EASE.out }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <a
@@ -92,11 +93,10 @@ export default function Hero() {
               </MagneticButton>
             </motion.div>
 
-            {/* Socials */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 1, delay: 0.9, ease: EASE.out }}
               className="mt-8 flex items-center gap-1.5"
             >
               {socialLinks.map(({ icon: Icon, label, href }) => (
@@ -114,21 +114,11 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Reserved for animated background/GIF */}
-          <div className="relative hidden lg:block">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.35, ease: EASE.out }}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/8 bg-[#0D0D10]/40 backdrop-blur-sm"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
-              <div className="absolute left-1/2 top-1/3 h-48 w-48 -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(59,130,246,0.15),transparent_70%)] blur-xl" />
-            </motion.div>
+          <div className="relative mt-12 lg:mt-0">
+            <DeveloperNetwork />
           </div>
         </div>
 
-        {/* Quick Info */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
