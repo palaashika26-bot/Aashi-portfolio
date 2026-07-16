@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -22,24 +23,38 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.9, ease: EASE.out }}
-              className="relative overflow-hidden rounded-3xl border border-white/8 bg-[#0D0D10]/60 p-1"
+              className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[#0D0D10]/60 p-1 transition-shadow duration-300 hover:shadow-[0_0_60px_-20px_rgba(59,130,246,0.4)]"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] bg-gradient-to-br from-[#0F1230] via-[#0B0B14] to-[#160B26]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] portrait-card">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0F1230] via-[#0B0B14] to-[#160B26]" />
                 <div className="absolute inset-0 bg-grid-fine opacity-40 mask-radial-fade" />
                 <div
-                  className="absolute -left-16 top-16 h-72 w-72 rounded-full opacity-70 blur-3xl"
+                  className="absolute -left-16 top-16 h-72 w-72 rounded-full opacity-70 blur-3xl transition-all duration-300 group-hover:scale-110 group-hover:opacity-100"
                   style={{
                     background:
                       "radial-gradient(closest-side, rgba(59,130,246,0.45), transparent 70%)",
                   }}
                 />
                 <div
-                  className="absolute -right-16 bottom-10 h-72 w-72 rounded-full opacity-70 blur-3xl"
+                  className="absolute -right-16 bottom-10 h-72 w-72 rounded-full opacity-70 blur-3xl transition-all duration-300 group-hover:scale-110 group-hover:opacity-100"
                   style={{
                     background:
                       "radial-gradient(closest-side, rgba(139,92,246,0.45), transparent 70%)",
                   }}
                 />
+                <Image
+                  src="/images/projects/profile.png"
+                  alt="Aashika Pal"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-t from-black/60 to-transparent backdrop-blur-sm" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="text-lg font-bold text-white">Aashika Pal</h3>
+                  <p className="mt-0.5 text-sm text-gray-300">Full Stack Developer</p>
+                  <p className="mt-1.5 text-xs text-gray-400">📍 Mumbai, India</p>
+                </div>
               </div>
             </motion.div>
 
@@ -128,6 +143,19 @@ export default function About() {
           </div>
         </div>
       </Container>
+      <style>{`
+        @keyframes portrait-float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
+        }
+        .portrait-card {
+          animation: portrait-float 7s ease-in-out infinite;
+        }
+        .group:hover .portrait-card {
+          animation: none;
+          transform: scale(1.02) translateY(-3px);
+        }
+      `}</style>
     </Section>
   );
 }
